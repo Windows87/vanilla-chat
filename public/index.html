@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Entrar</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<style type="text/css">
+	  html {
+	  	width: 100%;
+	  	height: 100%;
+	  	font-family: Roboto;
+	  }
+
+	  body {
+	  	width: 100%;
+	  	height: 100%;
+	  	margin: 0;
+	  	display: flex;
+	  	flex-direction: column;
+	  	align-items: center;
+	  	justify-content: center;
+	  }
+
+	  form {
+	  	display: flex;
+	  	flex-direction: column;
+	  }
+
+	  .formDiv {
+	  	padding: 8px;
+	  	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+	  }
+
+	  input[type="text"] {
+	  	border: 0;
+	  	width: 400px;
+	  	height: 40px;
+	  	border-bottom: 1px solid #DCDCDC;
+	  	margin-bottom: 4px;
+	  	font-size: 17px;
+	  	transition: 1s;
+	  }
+
+	  input[type="text"]:focus {
+	  	outline: none;
+	  	border-bottom: 1px solid black;
+	  }
+
+
+	  input[type="submit"] {
+	  	background-color: #03a9f4;
+	  	color: white;
+	  	border: 0;
+	  	font-size: 17px;
+	  	height: 40px;
+	  	padding: 6px;
+	  	transition: 1s all;
+	  }
+
+	  input[type="submit"]:hover {
+	  	background-color: #2196f3;
+	  }
+
+	  input[type="submit"]:focus {
+	  	outline: none;
+	  }
+	</style>
+</head>
+<body>
+  <div class="formDiv">
+  	<form onsubmit="onSubmit(event)">
+  	  <input type="text" placeholder="Nome" id="name-input" />
+  	  <input type="text" placeholder="Url da Imagem" id="image-input" />
+  	  <input type="submit" value="Entrar" />
+  	</form>
+  </div>
+</body>
+
+<script type="text/javascript">
+  function onSubmit(event) {
+  	event.preventDefault();
+
+  	const name = document.querySelector('#name-input').value;
+  	const imageUrl = document.querySelector('#image-input').value || 'https://www.mundoboaforma.com.br/wp-content/uploads/2018/03/ovo-620x330.jpg';
+
+  	if(!name)
+  	  return;
+
+  	localStorage.setItem('user', JSON.stringify({name, imageUrl}));
+
+  	window.location.href = '/chat.html';
+  }
+</script>
+</html>
