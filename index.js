@@ -38,7 +38,7 @@ io.on('connection', socket => {
   socket.on('user-connect', user => {
   	users.push({ name: user.name, imageUrl: user.imageUrl, socket_id: socket.id });
   	io.sockets.emit('users-connected', users);
-  	io.sockets.emit('old-messages', messages);
+  	io.to(socket.id).emit('old-messages', messages);
   });
 
   socket.on('message', text => {
