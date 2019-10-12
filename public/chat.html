@@ -1,131 +1,135 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chat</title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<style type="text/css">
-	  html {
-	  	width: 100%;
-	  	height: 100%;
-	  	font-family: Roboto;
-	  }
+  <title>Chat</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, shrink-to-fit=no">
+  <style type="text/css">
+    html {
+      width: 100%;
+      height: 100%;
+      font-family: Roboto;
+    }
 
-	  body {
-	  	width: 100%;
-	  	height: 100%;
-	  	margin: 0;
-	  	display: flex;
-	  	flex-direction: column;
-	  	align-items: center;
-	  	justify-content: center;
-	  }
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
-	  .chatContainer {
-	  	width: 70%;
-	  	height: 90%;
-	  	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
-	  	display: flex;
-	  	flex-direction: column;
-	  }
+    .chatContainer {
+      width: 70%;
+      height: 90%;
+      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+    }
 
-	  .chatUsersContainer {
-	  	width: 100%;
-	  	height: 50px;
-	  	padding: 4px;
-	  }
+    .chatUsersContainer {
+      width: 100%;
+      height: 50px;
+      padding: 4px;
+    }
 
-	  .chatUserImage {
-	  	width: 50px;
-	  	height: 50px;
-	  	margin-left: 4px;
-	  	border-radius: 100px;
-	  }
+    .chatUserImage {
+      width: 50px;
+      height: 50px;
+      margin-left: 4px;
+      border-radius: 100px;
+    }
 
-	  .chatData {
-	  	display: flex;
-	  	flex-direction: column;
-	  	flex: 1;
-	  	overflow: auto;
-	  }
+    .chatData {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      overflow: auto;
+    }
 
 
-	  .chatData-container {
-	  	margin-top: 4px;
-	  	margin-bottom: 4px;
-	  	display: flex;
-	  	min-height: fit-content;
-	  }
+    .chatData-container {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      display: flex;
+      min-height: fit-content;
+    }
 
-	  .chatData-image {
-	  	width: 50px;
-	  	height: 50px;
-	  	border-radius: 100px;
-	  	margin-left: 4px;
-	  }
+    .chatData-image {
+      width: 50px;
+      height: 50px;
+      border-radius: 100px;
+      margin-left: 4px;
+    }
 
-	  .chatData-messageContainer {
-	  	max-width: 70%;
-	  	margin-left: 4px;
-	  	display: flex;
-	  	flex-direction: column;
-	  }
+    .chatData-messageContainer {
+      max-width: 70%;
+      margin-left: 4px;
+      display: flex;
+      flex-direction: column;
+    }
 
-	  .chatData-text {
-	  	color: gray;
-	  	font-size: 14px;
-	  }
+    .chatData-text {
+      color: gray;
+      font-size: 14px;
+    }
 
-	  form {
-	  	width: calc(100% - 16px);
-	  	display: flex;
-	  	padding: 8px;
-	  }
+    form {
+      width: calc(100% - 16px);
+      display: flex;
+      padding: 8px;
+    }
 
-	  input[type="text"] {
-	  	flex: 1;
-	  	height: 40px;
-	  	border: 0;
-	  	transition: 1s all;
-	  	color: gray;
-	  	font-size: 16px;
-	  }
+    input[type="text"] {
+      flex: 1;
+      height: 40px;
+      border: 0;
+      transition: 1s all;
+      color: gray;
+      font-size: 16px;
+      min-width: 0;
+    }
 
-	  input[type="text"]:focus {
-	  	outline: none;
-	  }
+    input[type="text"]:focus {
+      outline: none;
+    }
 
-	  input[type="submit"] {
-	  	color: white;
-	  	border-radius: 100px;
-	  	background-color: #03a9f4;
-	  	border: 0;
-	  	transition: 1s all;
-	  }
+    input[type="submit"] {
+      padding: 8px;
+      color: white;
+      min-width: fit-content;
+      border-radius: 100px;
+      background-color: #03a9f4;
+      border: 0;
+      transition: 1s all;
+    }
 
-	  input[type="submit"]:hover {
-	  	background-color: #2196f3;
-	  }
+    input[type="submit"]:hover {
+      background-color: #2196f3;
+    }
 
-	  input[type="submit"]:focus {
-	  	outline: none;
-	  }
+    input[type="submit"]:focus {
+      outline: none;
+    }
 
-	  ::-webkit-scrollbar{
-	    width: 5px;
-	  }
+    ::-webkit-scrollbar{
+      width: 5px;
+    }
 
-	  ::-webkit-scrollbar-thumb {
-	    background-color: rgba(0, 0, 0, 0.25);
-	  }
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.25);
+    }
 
-	  a {
-	  	text-decoration: none;
-	  	color: #2196f3;
-	  	position: absolute;
-	  	top: 8px;
-	  	left: 8px;
-	  }	  	  
-	</style>
+    a {
+      text-decoration: none;
+      color: #2196f3;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }       
+  </style>
 </head>
 <body>
 
@@ -134,8 +138,8 @@
   <div class="chatUsersContainer"></div>
   <div class="chatData"></div>
   <form onsubmit="onSendMessageSubmit(event)">
-  	<input type="text" placeholder="Digite.." />
-  	<input type="submit" value="Enviar" />
+    <input type="text" placeholder="Digite.." />
+    <input type="submit" value="Enviar" />
   </form>
 </div>
 
@@ -149,78 +153,78 @@
   socket.emit('user-connect', user);
 
   socket.on('users-connected', users => {
-  	refreshUsersConnected(users);
+    refreshUsersConnected(users);
   });
 
   socket.on('old-messages', messages => {
-  	messages.map(message => setMessage(message));
+    messages.map(message => setMessage(message));
   });
 
   socket.on('new-message', message => setMessage(message));
 
   function sendMessage(message) {
-  	socket.emit('message', message);
+    socket.emit('message', message);
   }
 
   function setMessage(message) {
-  	const chatDataContainer = document.createElement('div');
-  	chatDataContainer.classList.add('chatData-container');
+    const chatDataContainer = document.createElement('div');
+    chatDataContainer.classList.add('chatData-container');
 
-  	const imageAvatar = document.createElement('img');
-  	imageAvatar.src = message.user.imageUrl;
-  	imageAvatar.classList.add('chatData-image');
+    const imageAvatar = document.createElement('img');
+    imageAvatar.src = message.user.imageUrl;
+    imageAvatar.classList.add('chatData-image');
 
-  	const chatDataMessageContainer = document.createElement('div');
-  	chatDataMessageContainer.classList.add('chatData-messageContainer');
+    const chatDataMessageContainer = document.createElement('div');
+    chatDataMessageContainer.classList.add('chatData-messageContainer');
 
-  	const name = document.createElement('b');
-  	name.innerText = message.user.name;
+    const name = document.createElement('b');
+    name.innerText = message.user.name;
 
-  	const text = document.createElement('span');
-  	text.innerHTML = message.text;
-  	text.classList.add('chatData-text');
+    const text = document.createElement('span');
+    text.innerHTML = message.text;
+    text.classList.add('chatData-text');
 
-  	chatDataMessageContainer.appendChild(name);
-  	chatDataMessageContainer.appendChild(text);
+    chatDataMessageContainer.appendChild(name);
+    chatDataMessageContainer.appendChild(text);
 
-  	chatDataContainer.appendChild(imageAvatar);
-  	chatDataContainer.appendChild(chatDataMessageContainer);
+    chatDataContainer.appendChild(imageAvatar);
+    chatDataContainer.appendChild(chatDataMessageContainer);
 
-  	const chatData = document.querySelector('.chatData');
-  	chatData.appendChild(chatDataContainer);
+    const chatData = document.querySelector('.chatData');
+    chatData.appendChild(chatDataContainer);
 
-  	goToEndScroll();
+    goToEndScroll();
   }
 
   function refreshUsersConnected(users) {
-  	const chatUsersContainer = document.querySelector('.chatUsersContainer');
-  	chatUsersContainer.innerHTML = '';
+    const chatUsersContainer = document.querySelector('.chatUsersContainer');
+    chatUsersContainer.innerHTML = '';
 
-  	users.map(user => {
-  	  const userImage = document.createElement('img');
-  	  userImage.classList.add('chatUserImage');
-  	  userImage.src = user.imageUrl;
+    users.map(user => {
+      const userImage = document.createElement('img');
+      userImage.classList.add('chatUserImage');
+      userImage.src = user.imageUrl;
 
-  	  const chatUsersContainer = document.querySelector('.chatUsersContainer');
-  	  chatUsersContainer.appendChild(userImage);
-  	});
+      const chatUsersContainer = document.querySelector('.chatUsersContainer');
+      chatUsersContainer.appendChild(userImage);
+    });
   }
 
   function onSendMessageSubmit(event) {
-  	event.preventDefault();
+    event.preventDefault();
 
-  	const text = document.querySelector('input[type="text"]').value;
+    const text = document.querySelector('input[type="text"]').value;
 
-  	if(!text)
-  	  return;
+    if(!text)
+      return;
 
-  	sendMessage(text);
-  	document.querySelector('input[type="text"]').value = '';
+    sendMessage(text);
+    document.querySelector('input[type="text"]').value = '';
   }
 
   function goToEndScroll() {
-  	const chatData = document.querySelector('.chatData');
-  	chatData.scrollTo(0, chatData.scrollHeight);
+    const chatData = document.querySelector('.chatData');
+    chatData.scrollTo(0, chatData.scrollHeight);
   }
 </script>
 </body>
